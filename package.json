@@ -1,8 +1,8 @@
 {
-  "name": "snappasails",
+  "name": "start-be",
   "private": true,
   "version": "0.0.0",
-  "description": "snappasails",
+  "description": "Backend Starting Point",
   "keywords": [],
   "dependencies": {
     "acl": "^0.4.7",
