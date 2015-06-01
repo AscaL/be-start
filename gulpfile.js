@@ -4,7 +4,10 @@ var stylish = require('jshint-stylish');
 var size = require('gulp-size');
 var todo = require('gulp-todo');
 var notify = require('gulp-notify');
+var coveralls = require('gulp-coveralls');
 var del = require('del');
+
+//TODO: define the folders better
 
 gulp.task('default', function () {
 	// place code for your default task here
@@ -48,4 +51,9 @@ gulp.task('todo', function () {
 			absolute: true
 		}))
 		.pipe(gulp.dest('./'))
+});
+
+gulp.task('coveralls', function () {
+	gulp.src('./coverage/lcov.info')
+		.pipe(coveralls());
 });

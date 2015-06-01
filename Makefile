@@ -8,6 +8,7 @@ BOOTSTRAP := test/bootstrap.test.js
 UNIT := test/unit/**/*.js
 E2E := test/e2e/**/*.js
 TESTSUITE = test/$(TEST)/*.js
+COVERALLS := ./node_modules/coveralls/bin/coveralls.js
 
 .PHONY: test
 test:
@@ -20,6 +21,10 @@ unit-test:
 .PHONY: e2e-test
 e2e-test:
 	$(MOCHA) $(BOOTSTRAP) $(E2E)
+
+.PHONY: test-coveralls
+test-coveralls:
+	$(MOCHA) -R mocha-lcov-reporter $(BOOTSTRAP) $(UNIT)
 
 .PHONY: cover
 cover:
