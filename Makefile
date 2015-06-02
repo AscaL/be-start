@@ -24,7 +24,7 @@ e2e-test:
 
 .PHONY: test-coveralls
 test-coveralls:
-	$(MOCHA) -R mocha-lcov-reporter $(BOOTSTRAP) $(UNIT)
+	$(ISTANBUL) cover $(MOCHA_ALT) --report lcovonly -- $(BOOTSTRAP) $(UNIT) && cat ./coverage/lcov.info | $(COVERALLS) && rm -rf ./coverage
 
 .PHONY: cover
 cover:
