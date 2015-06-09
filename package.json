@@ -24,6 +24,7 @@
     "include-all": "~0.1.6",
     "jsonwebtoken": "^5.0.1",
     "lodash": "^3.9.3",
+    "moment": "^2.10.3",
     "passport": "^0.2.2",
     "passport-jwt": "^1.1.0",
     "passport-local": "^1.0.0",
