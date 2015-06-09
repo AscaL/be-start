@@ -6,5 +6,6 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/556a6692636532001a0e1600/badge.svg?style=flat)](https://www.versioneye.com/user/projects/556a6692636532001a0e1600)
 [![Dependency Status](https://david-dm.org/AscaL/be-start.svg)](https://david-dm.org/AscaL/be-start)
 [![devDependency Status](https://david-dm.org/AscaL/be-start/dev-status.svg)](https://david-dm.org/AscaL/be-start#info=devDependencies)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 Starting backend with Acl and JWT Auth.
