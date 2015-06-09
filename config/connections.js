@@ -20,7 +20,6 @@
  */
 
 module.exports.connections = {
-
   /***************************************************************************
    *                                                                          *
    * Local disk storage for DEVELOPMENT ONLY                                  *
@@ -60,9 +59,9 @@ module.exports.connections = {
     adapter: 'sails-mongo',
     host: 'localhost',
     port: 27017,
-    // user: 'username',
-    // password: 'password',
-    // database: 'your_mongo_db_name_here'
+  // user: 'username',
+  // password: 'password',
+  // database: 'your_mongo_db_name_here'
   },
 
   /***************************************************************************
@@ -82,7 +81,6 @@ module.exports.connections = {
     database: 'YOUR_POSTGRES_DB'
   },
 
-
   /***************************************************************************
    *                                                                          *
    * More adapters: https://github.com/balderdashy/sails                      *
@@ -99,5 +97,4 @@ module.exports.connections = {
     host: '127.0.0.1'
   }
 
-
-};
+}

@@ -1,12 +1,13 @@
 {
-	"node": true,
-	"esnext": true,
-	"bitwise": true,
-	"curly": true,
-	"immed": true,
-	"newcap": true,
-	"noarg": true,
-	"undef": true,
-	"unused": "vars",
-	"strict": false
+  "node": true,
+  "esnext": true,
+  "bitwise": true,
+  "curly": true,
+  "immed": true,
+  "newcap": true,
+  "noarg": true,
+  "undef": false,
+  "unused": "vars",
+  "strict": false,
+  "asi": true
 }

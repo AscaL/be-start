@@ -7,7 +7,7 @@
  *
  */
 
-module.exports = function checkAcl(req, res, next) {
+module.exports = function checkAcl (req, res, next) {
   var controller = req.options.controller
   var action = req.options.action
   var user = req.user || {}
@@ -15,11 +15,10 @@ module.exports = function checkAcl(req, res, next) {
 
   // Retrieve action and controller and check if user is allowed
   if(!_.isUndefined(userId) && !_.isUndefined(controller) && !_.isUndefined(action)) {
-    acl.isAllowed(userId, controller, action, function(err, allowed) {
+    acl.isAllowed(userId, controller, action, function (err, allowed) {
       if(allowed) {
         next()
-      }
-      else {
+      } else {
         return res.forbidden()
       }
     })

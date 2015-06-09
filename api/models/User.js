@@ -3,53 +3,51 @@
  * @description :: Model for storing users
  */
 module.exports = {
+  schema: true,
 
-	schema: true,
+  attributes: {
+    username: {
+      type: 'string',
+      required: true,
+      unique: true,
+      alphanumericdashed: true
+    },
 
-	attributes: {
+    password: {
+      type: 'string',
+      required: true
+    },
 
-		username: {
-			type: 'string',
-			required: true,
-			unique: true,
-			alphanumericdashed: true
-		},
+    email: {
+      type: 'email',
+      required: true,
+      unique: true
+    },
 
-		password: {
-			type: 'string',
-			required: true
-		},
+    firstName: {
+      type: 'string',
+      defaultsTo: ''
+    },
 
-		email: {
-			type: 'email',
-			required: true,
-			unique: true
-		},
+    lastName: {
+      type: 'string',
+      defaultsTo: ''
+    },
 
-		firstName: {
-			type: 'string',
-			defaultsTo: ''
-		},
+    toJSON: function () {
+      var user = this.toObject()
+      return _.omit(user, 'password')
+    }
+  },
 
-		lastName: {
-			type: 'string',
-			defaultsTo: ''
-		},
+  beforeUpdate: function (values, next) {
+    cipherService.hashPassword(values)
+    next()
+  },
 
-		toJSON: function () {
-			var user = this.toObject();
-			return _.omit(user, 'password')
-		}
-	},
+  beforeCreate: function (values, next) {
+    cipherService.hashPassword(values)
+    next()
+  }
 
-	beforeUpdate: function (values, next) {
-		cipherService.hashPassword(values);
-		next();
-	},
-
-	beforeCreate: function (values, next) {
-		cipherService.hashPassword(values);
-		next();
-	}
-
-};
+}

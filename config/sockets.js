@@ -12,7 +12,6 @@
 
 module.exports.sockets = {
 
-
   /***************************************************************************
   *                                                                          *
   * Node.js (and consequently Sails.js) apps scale horizontally. It's a      *
@@ -50,24 +49,20 @@ module.exports.sockets = {
   // db: 'sails',
   // pass: '<redis auth password>',
 
-
-
- /***************************************************************************
-  *                                                                          *
-  * Whether to expose a 'get /__getcookie' route with CORS support that sets *
-  * a cookie (this is used by the sails.io.js socket client to get access to *
-  * a 3rd party cookie and to enable sessions).                              *
-  *                                                                          *
-  * Warning: Currently in this scenario, CORS settings apply to interpreted  *
-  * requests sent via a socket.io connection that used this cookie to        *
-  * connect, even for non-browser clients! (e.g. iOS apps, toasters, node.js *
-  * unit tests)                                                              *
-  *                                                                          *
-  ***************************************************************************/
+  /***************************************************************************
+   *                                                                          *
+   * Whether to expose a 'get /__getcookie' route with CORS support that sets *
+   * a cookie (this is used by the sails.io.js socket client to get access to *
+   * a 3rd party cookie and to enable sessions).                              *
+   *                                                                          *
+   * Warning: Currently in this scenario, CORS settings apply to interpreted  *
+   * requests sent via a socket.io connection that used this cookie to        *
+   * connect, even for non-browser clients! (e.g. iOS apps, toasters, node.js *
+   * unit tests)                                                              *
+   *                                                                          *
+   ***************************************************************************/
 
   // grant3rdPartyCookie: true,
-
-
 
   /***************************************************************************
   *                                                                          *
@@ -108,11 +103,10 @@ module.exports.sockets = {
   ***************************************************************************/
   // beforeConnect: function(handshake, cb) {
   //   // `true` allows the connection
-  //   return cb(null, true);
+  //   return cb(null, true)
   //
   //   // (`false` would reject the connection)
   // },
-
 
   /***************************************************************************
   *                                                                          *
@@ -124,7 +118,7 @@ module.exports.sockets = {
   ***************************************************************************/
   // afterDisconnect: function(session, socket, cb) {
   //   // By default: do nothing.
-  //   return cb();
+  //   return cb()
   // },
 
   /***************************************************************************
@@ -138,4 +132,4 @@ module.exports.sockets = {
   ***************************************************************************/
   // transports: ["polling", "websocket"]
 
-};
+}

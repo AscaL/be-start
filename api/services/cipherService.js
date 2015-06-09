@@ -1,8 +1,7 @@
-var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
+var bcrypt = require('bcryptjs')
+var jwt = require('jsonwebtoken')
 
 module.exports = {
-
   secret: sails.config.jwtSettings.secret,
   issuer: sails.config.jwtSettings.issuer,
   audience: sails.config.jwtSettings.audience,
@@ -13,8 +12,8 @@ module.exports = {
    */
   hashPassword: function (user) {
     if (user.password) {
-      //var salt = bcrypt.genSaltSync(10);
-      user.password = bcrypt.hashSync(user.password); //(user.password, salt)
+      // var salt = bcrypt.genSaltSync(10)
+      user.password = bcrypt.hashSync(user.password) // (user.password, salt)
     }
   },
 
@@ -23,7 +22,7 @@ module.exports = {
    * @returns boolean indicating a match
    */
   comparePassword: function (password, user) {
-    return bcrypt.compareSync(password, user.password);
+    return bcrypt.compareSync(password, user.password)
   },
 
   /**
@@ -34,14 +33,14 @@ module.exports = {
    */
   createToken: function (user) {
     return jwt.sign({
-        user: user.toJSON()
-      },
+      user: user.toJSON()
+    },
       sails.config.jwtSettings.secret, {
         algorithm: sails.config.jwtSettings.algorithm,
         expiresInMinutes: sails.config.jwtSettings.expiresInMinutes,
         issuer: sails.config.jwtSettings.issuer,
         audience: sails.config.jwtSettings.audience
       }
-    );
+    )
   }
-};
+}

@@ -21,7 +21,6 @@
  */
 
 module.exports.routes = {
-
   /***************************************************************************
    *                                                                          *
    * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
@@ -58,11 +57,11 @@ module.exports.routes = {
   'delete /Acl/roles/remove': 'AclController.removeRole',
   'get /Acl/getControllers': 'AclController.getControllers',
   'get /Acl/test': 'AclController.test',
-  //------------------------------------------
+  // ------------------------------------------
 
   // Authentication-----------------------------------------------------
   'post /Auth/signup': 'AuthController.signup',
   'post /Auth/signin': 'AuthController.signin',
-  //--------------------------------------------------------------------
+  // --------------------------------------------------------------------
 
-};
+}

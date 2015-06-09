@@ -16,9 +16,7 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.policies.html
  */
 
-
 module.exports.policies = {
-
   /***************************************************************************
    *                                                                          *
    * Default policy for all controllers and actions (`true` allows public     *
@@ -54,8 +52,8 @@ module.exports.policies = {
   // (this overrides `false` above)
   // nurture	: 'isRabbitMother',
 
-  // Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
-  // before letting any users feed our rabbits
-  // feed : ['isNiceToAnimals', 'hasRabbitFood']
-  // }
-};
+// Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
+// before letting any users feed our rabbits
+// feed : ['isNiceToAnimals', 'hasRabbitFood']
+// }
+}

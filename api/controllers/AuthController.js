@@ -2,7 +2,7 @@
  * AuthController
  * @description :: Server-side logic for manage user's authorization
  */
-var passport = require('passport');
+var passport = require('passport')
 
 /**
  * Triggers when user authenticates via passport
@@ -13,19 +13,18 @@ var passport = require('passport');
  * @param {Object} info Info if some error occurs
  * @private
  */
-function _onPassportAuth(req, res, error, user, info) {
-  if (error) return res.serverError(error);
-  if (!user) return res.unauthorized(null, info && info.code, info && info.message);
+function _onPassportAuth (req, res, error, user, info) {
+  if (error) return res.serverError(error)
+  if (!user) return res.unauthorized(null, info && info.code, info && info.message)
 
   return res.ok({
     // TODO: replace with new type of cipher service
     token: cipherService.createToken(user),
     user: user
-  });
+  })
 }
 
 module.exports = {
-
   /**
    * Sign up in system
    * @param {Object} req Request object
@@ -39,10 +38,10 @@ module.exports = {
           // TODO: replace with new type of cipher service
           token: cipherService.createToken(user),
           user: user
-        };
+        }
       })
       .then(res.created)
-      .catch(res.serverError);
+      .catch(res.serverError)
   },
 
   /**
@@ -52,6 +51,6 @@ module.exports = {
    */
   signin: function (req, res) {
     passport.authenticate('local',
-      _onPassportAuth.bind(this, req, res))(req, res);
+      _onPassportAuth.bind(this, req, res))(req, res)
   },
-};
+}
