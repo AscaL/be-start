@@ -1,0 +1,8 @@
+{
+  "files": {
+    "included": [
+      "api/**/*.js"
+    ],
+    "excluded": []
+  }
+}
